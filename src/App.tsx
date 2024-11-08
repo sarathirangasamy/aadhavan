@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LaboratoryTable />} />
         <Route path="/create" element={<ModifyLaboratory />} />
+        <Route path="/edit/:id" element={<ModifyLaboratory />} />
       </Routes>
     </Router>
   );
