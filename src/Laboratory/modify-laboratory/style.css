@@ -1,21 +1,23 @@
 .container-bg {
-  background: #f5f5f5;
+  background: #fff;
   text-align: center;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
 }
 
 .container {
   display: flex;
-  margin: auto;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  max-width: 800px;
+  width: 100%;
+  background: #f5f5f5;
   padding: 20px;
   border-radius: 10px;
-  max-width: 1000px;
-  background: #fff;
-  width: 100%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  justify-content: center;
-  flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -115,4 +117,26 @@ select:focus {
   color: red;
   font-size: 0.9em;
   text-align: left;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    max-width: 100%; 
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .column {
+    min-width: 100%;
+  }
+
+  .submit-button,
+  .cancel-button {
+    width: 100%;
+    margin-top: 10px;
+  }
 }

@@ -10,6 +10,7 @@ const LaboratoryTable: React.FC = () => {
   const laboratories = useSelector(
     (state: RootState) => state.laboratory.laboratories
   );
+
   const dispatch = useDispatch();
 
   const handleDelete = (id: string) => {
@@ -19,8 +20,6 @@ const LaboratoryTable: React.FC = () => {
   const goToEdit = (id: string) => {
     navigate(`edit/${id}`);
   };
-
-  console.log(laboratories, "laboratories");
 
   return (
     <div>
@@ -44,7 +43,14 @@ const LaboratoryTable: React.FC = () => {
           {laboratories?.length ? (
             laboratories.map((lab, index) => (
               <tr key={lab.id}>
-                <td>{lab.name}</td>
+                <td
+                  style={{ cursor: "pointer", color: "blue" }}
+                  onClick={() => {
+                    goToEdit(lab.id);
+                  }}
+                >
+                  {lab.name}
+                </td>
                 <td>{lab.city}</td>
                 <td>{lab.cluster}</td>
                 <td>{lab.availableEquipment}</td>

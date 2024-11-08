@@ -153,8 +153,8 @@ export const ModifyLaboratory: React.FC = () => {
   return (
     <>
       <div className="container-bg">
-        <h3 className="text-title">{id ? "Update" : "Create"} Laboratory</h3>
         <div className="container">
+        <h3 className="text-title">{id ? "Update" : "Create"} Laboratory</h3>
           <form onSubmit={handleSubmit}>
             {/* First Row (Name, City, Cluster) */}
             <div className="row">
@@ -165,7 +165,6 @@ export const ModifyLaboratory: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Laboratory Name"
-                  required
                 />
                 {errors.name && (
                   <span className="error-message">{errors.name}</span>
@@ -179,7 +178,7 @@ export const ModifyLaboratory: React.FC = () => {
                   value={formData.city}
                   onChange={handleChange}
                   placeholder="City"
-                  required
+                
                 />
                 {errors.city && (
                   <span className="error-message">{errors.city}</span>
@@ -193,7 +192,7 @@ export const ModifyLaboratory: React.FC = () => {
                   value={formData.cluster}
                   onChange={handleChange}
                   placeholder="Cluster"
-                  required
+                
                 />
                 {errors.cluster && (
                   <span className="error-message">{errors.cluster}</span>
@@ -217,7 +216,7 @@ export const ModifyLaboratory: React.FC = () => {
                     })
                   }
                   placeholder="Available Equipment"
-                  required
+                
                 />
                 {errors.availableEquipment && (
                   <span className="error-message">
@@ -254,7 +253,6 @@ export const ModifyLaboratory: React.FC = () => {
                       placeholder={
                         param.charAt(0).toUpperCase() + param.slice(1)
                       }
-                      required
                     />
                     {errors[param as keyof typeof errors] && (
                       <span className="error-message">
