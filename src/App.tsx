@@ -2,8 +2,8 @@ import "./App.css";
 
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ModifyLaboratory } from "./Laboratory/modify-laboratory/CreateLaboratory";
-import LaboratoryTable from "./Laboratory/laboratoryTable";
+import { ModifyLaboratory } from "./Laboratory/modify-laboratory/modify-laboratory";
+import LaboratoryTable from "./Laboratory";
 
 function App() {
   return (

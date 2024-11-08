@@ -1,12 +1,12 @@
+import React, { useState } from "react";
+import { Laboratory } from "../../services/interface";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { addLaboratory } from "../../store/laboratorySlice";
 import "./style.css";
 
-import React, { useState } from "react";
-
-import { Laboratory } from "../../services/interface";
-import { createLaboratory } from "../../services/laboratoryService";
-import { useNavigate } from "react-router-dom";
-
 export const ModifyLaboratory: React.FC = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [city, setCity] = useState("");
@@ -15,7 +15,7 @@ export const ModifyLaboratory: React.FC = () => {
   const [fuelOilTestingParameters, setFuelOilTestingParameters] = useState("");
   const [status, setStatus] = useState<"Live" | "Under Maintenance">("Live");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newLaboratory: Laboratory = {
       id: Math.random().toString(),
@@ -26,11 +26,8 @@ export const ModifyLaboratory: React.FC = () => {
       fuelOilTestingParameters,
       status,
     };
-    const result = await createLaboratory(newLaboratory);
-
-    if (result) {
-      navigate("/");
-    }
+    dispatch(addLaboratory(newLaboratory));
+    navigate("/");
   };
 
   return (
