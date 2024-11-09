@@ -154,7 +154,7 @@ export const ModifyLaboratory: React.FC = () => {
     <>
       <div className="container-bg">
         <div className="container">
-        <h3 className="text-title">{id ? "Update" : "Create"} Laboratory</h3>
+          <h3 className="text-title">{id ? "Update" : "Create"} Laboratory</h3>
           <form onSubmit={handleSubmit}>
             {/* First Row (Name, City, Cluster) */}
             <div className="row">
@@ -178,7 +178,6 @@ export const ModifyLaboratory: React.FC = () => {
                   value={formData.city}
                   onChange={handleChange}
                   placeholder="City"
-                
                 />
                 {errors.city && (
                   <span className="error-message">{errors.city}</span>
@@ -192,7 +191,6 @@ export const ModifyLaboratory: React.FC = () => {
                   value={formData.cluster}
                   onChange={handleChange}
                   placeholder="Cluster"
-                
                 />
                 {errors.cluster && (
                   <span className="error-message">{errors.cluster}</span>
@@ -216,7 +214,6 @@ export const ModifyLaboratory: React.FC = () => {
                     })
                   }
                   placeholder="Available Equipment"
-                
                 />
                 {errors.availableEquipment && (
                   <span className="error-message">
@@ -263,8 +260,6 @@ export const ModifyLaboratory: React.FC = () => {
                 )
               )}
             </div>
-
-
 
             <button type="submit" className="submit-button">
               {id ? "Update" : "Submit"}
